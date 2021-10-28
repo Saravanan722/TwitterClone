@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Twitter.MainPage">
+
+    <ListView HasUnevenRows="True"
+              ItemsSource="{Binding TwitterFeeds}">
+        <!--<ListView.ItemsSource>
+
+            <x:Array Type="{x:Type x:String}">
+                <x:String>H</x:String>
+                <x:String>H</x:String>
+                <x:String>H</x:String>
+                <x:String>H</x:String>
+                <x:String>H</x:String>
+                <x:String>H</x:String>
+
+            </x:Array>
+        </ListView.ItemsSource>-->
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Margin="20" Spacing="10">
+                        <Frame VerticalOptions="Start" Padding="0" CornerRadius="30">
+                            <Image HeightRequest="60" WidthRequest="60" Source="download.jpg" Aspect="AspectFill"/>
+                        </Frame>
+                        <StackLayout>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="{Binding Name}" TextColor="Black" FontSize="15" FontAttributes="Bold"/>
+                                <Label Text="{Binding UserName}" HorizontalOptions="FillAndExpand"/>
+                                <Label Text="{Binding DateAndTime, StringFormat='. {0}'}"/>
+                            </StackLayout>
+
+                            <Label Text="{Binding Description}" TextColor="Black" FontSize="15"/>
+                            <StackLayout Orientation="Horizontal">
+                            <Image Source="heart" HeightRequest="20" WidthRequest="20" HorizontalOptions="FillAndExpand"/>
+                            <Image Source="heart" HeightRequest="20" WidthRequest="20" HorizontalOptions="FillAndExpand"/>
+                            <Image Source="heart" HeightRequest="20" WidthRequest="20" HorizontalOptions="FillAndExpand"/>
+                            <Image Source="heart" HeightRequest="20" WidthRequest="20" HorizontalOptions="FillAndExpand"/>
+                            </StackLayout>
+                        </StackLayout>
+                        <StackLayout/>
+
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+
+</ContentPage>
